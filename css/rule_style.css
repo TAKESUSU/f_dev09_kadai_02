@@ -84,3 +84,6 @@ li {
 #clear {
   margin: 50px;
 }
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,127 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  color: #000;
+}
+h3 {
+  font-size: small;
+  margin: 10px 0px;
+}
+
+p {
+  color: white;
+  background-color: #444;
+  width: 140px;
+  text-align: center;
+}
+
+ul {
+  list-style: unset;
+  margin: 0px;
+  padding: 0px;
+  width: 100px;
+}
+li {
+  display: inline;
+  margin: 30px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+img {
+  width: 400px;
+}
+
+.wrapper {
+  width: 874px;
+  height: 1240px;
+  background-color: whitesmoke;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+
+.note_box {
+  width: 80%;
+  height: 90%;
+  border: solid 1px black;
+  border-radius: 30px;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.area1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0px 20px 0px;
+}
+
+.area2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0px 20px 0px;
+  border-top: solid 1px black;
+}
+
+.area3 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0px 0px 0px;
+  border-top: solid 1px black;
+}
+
+.text_box {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+/* textarea {
+  line-height: 20px;
+  background: linear-gradient(to bottom, # 1px, white 1px);
+  background-size: 100% 20px;
+  background-origin: content-box;
+  background-attachment: local;
+  border: none;
+} */
+
+.hansei {
+  background-image: repeating-linear-gradient(
+    #fff,
+    #fff calc(1.5rem - 1px),
+    #ced4da calc(1.5rem - 1px),
+    #ced4da 1.5rem,
+    #fff 1.5rem
+  );
+  background-origin: content-box;
+  background-clip: content-box;
+  background-attachment: local;
+  border: none;
+}
+
+.kyokun {
+  border: 1.5px dotted #000;
+}
+
+.date {
+  border: none;
+  font-family: sans-serif;
+  background: none;
+}
+
+.title_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img_box {
+  display: flex;
+  align-items: center;
+}

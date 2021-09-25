@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index_style.css" />
+    <title>REFLECTION NOTE</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h3>REFLECTION NOTE</h3>
+      <div class="note_box">
+        <div class="area1">
+          <div class="text_box">
+            <div class="title_box">
+              <p>今日の反省</p>
+              <input
+                id="date1"
+                class="date"
+                type="date"
+                name="calendar"
+                max="9999-12-31"
+              />
+            </div>
+            <textarea
+              class="hansei"
+              id="text_hansei1"
+              style="margin: 0px; height: 145px; width: 625px"
+            ></textarea>
+            <p>教訓</p>
+            <textarea
+              class="kyokun"
+              id="text_kyokun1"
+              style="margin: 0px; height: 70px; width: 625px"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="area2">
+          <div class="text_box">
+            <div class="title_box">
+              <p>今日の反省</p>
+              <input
+                id="date2"
+                class="date"
+                type="date"
+                name="calendar"
+                max="9999-12-31"
+              />
+            </div>
+            <textarea
+              class="hansei"
+              id="text_hansei2"
+              style="margin: 0px; height: 145px; width: 625px"
+            ></textarea>
+            <p>教訓</p>
+            <textarea
+              class="kyokun"
+              id="text_kyokun2"
+              style="margin: 0px; height: 70px; width: 625px"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="area3">
+          <div class="text_box">
+            <div class="title_box">
+              <p>今日の反省</p>
+              <input
+                id="date3"
+                class="date"
+                type="date"
+                name="calendar"
+                max="9999-12-31"
+              />
+            </div>
+            <textarea
+              class="hansei"
+              id="text_hansei3"
+              style="margin: 0px; height: 145px; width: 625px"
+            ></textarea>
+            <p>教訓</p>
+            <textarea
+              class="kyokun"
+              id="text_kyokun3"
+              style="margin: 0px; height: 70px; width: 625px"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="img_box">
+        <img src="img/wakabayashi.PNG" alt="" />
+        <ul>
+          <li id="save">保存</li>
+          <li id="clear">消去</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+      //1.Save クリックイベント
+      $("#save").on("click", function () {
+        const data = {
+          date1: $("#date1").val(),
+          date2: $("#date2").val(),
+          date3: $("#date3").val(),
+          text_hansei1: $("#text_hansei1").val(),
+          text_hansei2: $("#text_hansei2").val(),
+          text_hansei3: $("#text_hansei3").val(),
+          text_kyokun1: $("#text_kyokun1").val(),
+          text_kyokun2: $("#text_kyokun2").val(),
+          text_kyokun3: $("#text_kyokun3").val(),
+          //   text: $("#text_area").val(),
+        };
+        // console.log(text);
+        const jsonData = JSON.stringify(data);
+        localStorage.setItem("memo", jsonData);
+      });
+
+      //2.clear クリックイベント
+      $("#clear").on("click", function () {
+        localStorage.removeItem("memo");
+        $("#date1").val("");
+        $("#date2").val("");
+        $("#date3").val("");
+        $("#text_hansei1").val("");
+        $("#text_hansei2").val("");
+        $("#text_hansei3").val("");
+        $("#text_kyokun1").val("");
+        $("#text_kyokun2").val("");
+        $("#text_kyokun3").val("");
+      });
+      //3.ページ読み込み：保存データ取得表示
+      if (localStorage.getItem("memo")) {
+        const jsonData = localStorage.getItem("memo");
+        const data = JSON.parse(jsonData);
+        // console.log(data);
+        $("#kazyo_txt1").val(data.text1);
+        $("#kazyo_txt2").val(data.text2);
+        $("#kazyo_txt3").val(data.text3);
+        $("#kazyo_txt4").val(data.text4);
+        $("#kazyo_txt5").val(data.text5);
+        $("#kazyo_txt6").val(data.text6);
+        $("#kazyo_txt7").val(data.text7);
+        $("#date1").val(data.date1);
+        $("#date2").val(data.date2);
+        $("#date3").val(data.date3);
+        $("#text_hansei1").val(data.text_hansei1);
+        $("#text_hansei2").val(data.text_hansei2);
+        $("#text_hansei3").val(data.text_hansei3);
+        $("#text_kyokun1").val(data.text_kyokun1);
+        $("#text_kyokun2").val(data.text_kyokun2);
+        $("#text_kyokun3").val(data.text_kyokun3);
+      }
+    </script>
+  </body>
+</html>
