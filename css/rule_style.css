@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: serif;
+  color: black;
+}
+.wrapper {
+  width: 874px;
+  height: 1240px;
+  background-color: lightgray;
+}
+
+.rule_box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  /* height: 100%; */
+}
+
+.title_box {
+  background-color: white;
+  border: double black;
+  padding: 10px 40px 13px;
+  margin-top: 200px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 0px;
+  /* font-family: "YuMincho"; */
+  font-family: "STKaiti", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+}
+
+/* .kazyo {
+  width: 55%;
+  height: 40px;
+  border: unset;
+  margin: 10px;
+}*/
+input {
+  width: 55%;
+  height: 40px;
+  padding: 10px 20px;
+  margin: 10px;
+  font-family: "STKaiti", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+  font-size: 20px;
+  border: unset;
+}
+
+.txt_box p {
+  font-family: sans-serif;
+  margin: 0px;
+}
+
+.img_box {
+  display: flex;
+  width: 50%;
+  height: auto;
+  margin-top: 100px;
+}
+
+.img_box img {
+  display: flex;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.save_box {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+ul {
+  list-style: unset;
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  display: inline;
+  margin: 60px;
+}
+#clear {
+  margin: 50px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>反省ノート</title>
+    <link rel="stylesheet" href="css/cover_style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="cover_box" id="btn">
+        <div class="line_box">
+          <div class="title_box">
+            <p id="title">R E F L E C T I O N 　N O T E</p>
+            <h1>反 省 ノ ー ト</h1>
+          </div>
+          <div class="name_box">
+            <p>N A M E</p>
+            <h2 class="name">TAKESUE YASUAKI</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery.arctext.js"></script>
+    <script>
+      $(function () {
+        $("#title").arctext({
+          radius: 200,
+        });
+      });
+
+      var body = document.getElementsByTagName("body")[0];
+
+      function linkUrl() {
+        location.href = "rule.html";
+      }
+
+      var bt3 = document.getElementById("btn");
+      bt3.addEventListener("click", function () {
+        body.classList.add("anime3");
+        setTimeout(linkUrl, 1500);
+      });
+    </script>
+  </body>
+</html>

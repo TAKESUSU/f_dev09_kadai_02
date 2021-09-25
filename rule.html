@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/rule_style.css" />
+
+    <title>反省ノート七ヶ条</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="rule_box">
+        <div class="title_box">
+          <h2>反省ノート七ヶ条</h2>
+        </div>
+        <!-- <div class="kazyo"> -->
+        <input type="text" value="一、" id="kazyo_txt1" />
+        <!-- </div> -->
+        <!-- <div class="kazyo"> -->
+        <input type="text" value="二、" id="kazyo_txt2" />
+        <!-- </div> -->
+        <!-- <div class="kazyo"> -->
+        <input type="text" value="三、" id="kazyo_txt3" />
+        <!-- </div> -->
+        <!-- <div class="kazyo"> -->
+        <input type="text" value="四、" id="kazyo_txt4" />
+        <!-- </div> -->
+        <!-- <div class="kazyo"> -->
+        <input type="text" value="五、" id="kazyo_txt5" />
+        <!-- </div> -->
+        <!-- <div class="kazyo"> -->
+        <input type="text" value="六、" id="kazyo_txt6" />
+        <!-- </div> -->
+        <!-- <div class="kazyo"> -->
+        <input type="text" value="七、" id="kazyo_txt7" />
+        <!-- </div> -->
+        <div class="txt_box">
+          <p>自由に七ヶ条を書いてみましょう。</p>
+          <p>例　一、春日が行ったことで笑う</p>
+        </div>
+        <div class="img_box">
+          <img src="img/odori.PNG" alt="" />
+        </div>
+        <div class="save_box">
+          <ul>
+            <li id="save">保存</li>
+            <li id="clear">消去</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="js/jquery.arctext.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+      //1.Save クリックイベント
+      $("#save").on("click", function () {
+        const data = {
+          text1: $("#kazyo_txt1").val(),
+          text2: $("#kazyo_txt2").val(),
+          text3: $("#kazyo_txt3").val(),
+          text4: $("#kazyo_txt4").val(),
+          text5: $("#kazyo_txt5").val(),
+          text6: $("#kazyo_txt6").val(),
+          text7: $("#kazyo_txt7").val(),
+          //   text: $("#text_area").val(),
+        };
+        // console.log(text);
+        const jsonData = JSON.stringify(data);
+        localStorage.setItem("memo", jsonData);
+      });
+
+      //2.clear クリックイベント
+      $("#clear").on("click", function () {
+        localStorage.removeItem("memo");
+        $("#kazyo_txt1").val("");
+        $("#kazyo_txt2").val("");
+        $("#kazyo_txt3").val("");
+        $("#kazyo_txt4").val("");
+        $("#kazyo_txt5").val("");
+        $("#kazyo_txt6").val("");
+        $("#kazyo_txt7").val("");
+        // $("#text_area").val("");
+      });
+      //3.ページ読み込み：保存データ取得表示
+      if (localStorage.getItem("memo")) {
+        const jsonData = localStorage.getItem("memo");
+        const data = JSON.parse(jsonData);
+        // console.log(data);
+        $("#kazyo_txt1").val(data.text1);
+        $("#kazyo_txt2").val(data.text2);
+        $("#kazyo_txt3").val(data.text3);
+        $("#kazyo_txt4").val(data.text4);
+        $("#kazyo_txt5").val(data.text5);
+        $("#kazyo_txt6").val(data.text6);
+        $("#kazyo_txt7").val(data.text7);
+        // $("#text_area").val(data.text);
+      }
+    </script>
+  </body>
+</html>
